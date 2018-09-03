@@ -12,12 +12,12 @@ public class HotelKeyword {
     String combine;
     String getaroom;
 
-    public HotelKeyword(String official, String kayak, String trivago, String combine, String getaroom) {
-        setOfficial(official);
-        setKayak(kayak);
-        setTrivago(trivago);
-        setCombine(combine);
-        setGetaroom(getaroom);
+    public HotelKeyword(String[] keywords) {
+        setOfficial(keywords[0]);
+        setKayak(keywords[1]);
+        setTrivago(keywords[2]);
+        setCombine(keywords[3]);
+        setGetaroom(keywords[4]);
     }
 
     public String getOfficial() {

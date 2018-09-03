@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by hayoung on 2018. 8. 31..
  * gkduduu@naver.com
  */
-public class City {
+public class HotelCity {
     String cityName;
     ArrayList<HotelName> hotelList;
 

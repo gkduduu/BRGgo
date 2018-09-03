@@ -1,5 +1,6 @@
 package brg.utils.jhy.brggo;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +23,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import brg.utils.jhy.brggo.data.Hotel;
+import brg.utils.jhy.brggo.data.HotelBrand;
+import brg.utils.jhy.brggo.utils.Constant;
 import brg.utils.jhy.brggo.utils.JsonParser;
 
 public class IntroActivity extends AppCompatActivity {
@@ -69,13 +73,18 @@ public class IntroActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     JSONObject value = new JSONObject ((HashMap<String,String>)dataSnapshot.getValue());
-
+                    Hotel hotels = new Hotel();
+                    ArrayList<HotelBrand> brandArray = new ArrayList<>();
                     Log.d("jhy", "Value is: " + value);
                     try {
-                        JsonParser.parsingHilton(value.getJSONArray("hilton"));
+                        brandArray.add(JsonParser.parsingHilton(value.getJSONArray("hilton")));
                     }catch(JSONException e) {
                         e.getStackTrace();
                     }
+                    Constant.getInstance().setHotels(hotels);
+                    finish();
+                    startActivity(new Intent(IntroActivity.this,MainActivity.class));
+                    overridePendingTransition(0,0);
                 }
 
                 @Override

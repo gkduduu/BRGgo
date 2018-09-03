@@ -6,9 +6,9 @@ import java.util.ArrayList;
  * Created by hayoung on 2018. 8. 31..
  * gkduduu@naver.com
  */
-public class Brand {
+public class HotelBrand {
     String brandName;
-    ArrayList<Region> regions;
+    ArrayList<HotelRegion> hotelRegions;
 
     public String getBrandName() {
         return brandName;
@@ -18,11 +18,11 @@ public class Brand {
         this.brandName = brandName;
     }
 
-    public ArrayList<Region> getRegions() {
-        return regions;
+    public ArrayList<HotelRegion> getHotelRegions() {
+        return hotelRegions;
     }
 
-    public void setRegions(ArrayList<Region> regions) {
-        this.regions = regions;
+    public void setHotelRegions(ArrayList<HotelRegion> hotelRegions) {
+        this.hotelRegions = hotelRegions;
     }
 }
