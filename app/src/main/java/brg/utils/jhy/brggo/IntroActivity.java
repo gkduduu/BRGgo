@@ -81,6 +81,7 @@ public class IntroActivity extends AppCompatActivity {
                     }catch(JSONException e) {
                         e.getStackTrace();
                     }
+                    hotels.setHotels(brandArray);
                     Constant.getInstance().setHotels(hotels);
                     finish();
                     startActivity(new Intent(IntroActivity.this,MainActivity.class));

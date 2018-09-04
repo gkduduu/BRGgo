@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    useLibrary  'org.apache.http.legacy'
     compileSdkVersion 27
     defaultConfig {
         applicationId "brg.utils.jhy.brggo"
@@ -25,6 +26,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.google.firebase:firebase-config:11.8.0'
+    implementation 'org.jsoup:jsoup:1.11.3'
 }
 
 apply plugin: 'com.google.gms.google-services'

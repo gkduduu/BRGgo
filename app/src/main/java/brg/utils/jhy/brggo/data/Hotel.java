@@ -7,5 +7,13 @@ import java.util.ArrayList;
  * gkduduu@naver.com
  */
 public class Hotel {
+    public ArrayList<HotelBrand> getHotels() {
+        return hotels;
+    }
+
+    public void setHotels(ArrayList<HotelBrand> hotels) {
+        this.hotels = hotels;
+    }
+
     ArrayList<HotelBrand> hotels = new ArrayList<>();
 }

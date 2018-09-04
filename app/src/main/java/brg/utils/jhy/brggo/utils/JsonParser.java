@@ -72,6 +72,7 @@ public class JsonParser {
         }
         hotelCity.setHotelList(hotelNameArrayList);
         cities.add(hotelCity);
+        hotelRegion.setCities(cities);
 
         regions.add(hotelRegion);
         hilton.setHotelRegions(regions);
