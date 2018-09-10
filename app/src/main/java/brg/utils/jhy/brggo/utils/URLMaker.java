@@ -40,7 +40,7 @@ public class URLMaker {
         String kayakNum = num + "adults?sort=rank_a";
     }
 
-    //https://www.trivago.co.kr/?aDateRange[arr]=2018-09-21&aDateRange[dep]=2018-09-22&aPriceRange[from]=0&aPriceRange[to]=0&iPathId=519&aGeoCode[lat]=13.74821&aGeoCode[lng]=100.542915&iGeoDistanceItem=7823598&aCategoryRange=0,1,2,3,4,5&aOverallLiking=1,2,3,4,5&sOrderBy=relevance desc&bTopDealsOnly=false&iRoomType=7&cpt=782359802                         &iIncludeAll=0   &iViewType=0&bIsSeoPage=false&bIsSitemap=false&
+    //https://www.trivago.co.kr/?aDateRange[arr]=2018-09-21&aDateRange[dep]=2018-09-22&aPriceRange[from]=0&aPriceRange[to]=0&iPathId=519&aGeoCode[lat]=13.74821&aGeoCode[lng]=100.542915&iGeoDistanceItem=7823598&aCategoryRange=0,1,2,3,4,5&aOverallLiking=1,2,3,4,5&sOrderBy=relevance desc&bTopDealsOnly=false&iRoomType=7&cpt=782359802&iIncludeAll=0&iViewType=0&bIsSeoPage=false&bIsSitemap=false&
     public static void goTrivago(String arrDate, String depDate, String hotelCode) {
         String triDomain = "https://www.trivago.co.kr/?";
         String triArrive = "aDateRange[arr]=" + arrDate + "&";
@@ -64,5 +64,10 @@ public class URLMaker {
         String getaArrive = "?check_in=" + arrDate;
         String getaDeparture = "&check_out=" + DepDate;
         String getaSuffix = "&rinfo=[[18,18]]";
+    }
+
+    //https://www.tripadvisor.co.kr/Hotel_Review-g293916-d586655-Reviews-Millennium_Hilton_Bangkok-Bangkok.html
+    public static void goTripadvisor() {
+
     }
 }

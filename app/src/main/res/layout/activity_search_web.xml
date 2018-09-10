@@ -5,16 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SearchWebActivity">
+    tools:context=".SearchActivity">
 
     <WebView
-        android:id="@+id/aaaa"
+        android:id="@+id/webview_searcher"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-    <WebView
-        android:id="@+id/bbbb"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

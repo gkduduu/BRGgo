@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 android {
-    useLibrary  'org.apache.http.legacy'
+    useLibrary 'org.apache.http.legacy'
     compileSdkVersion 27
     defaultConfig {
         applicationId "brg.utils.jhy.brggo"
@@ -27,6 +28,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.google.firebase:firebase-config:11.8.0'
     implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'com.android.support:cardview-v7:27.+'
 }
 
 apply plugin: 'com.google.gms.google-services'

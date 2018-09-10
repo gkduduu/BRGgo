@@ -1,11 +1,13 @@
 package brg.utils.jhy.brggo.data;
 
+import java.io.Serializable;
+
 /**
  * Created by hayoung on 2018. 8. 31..
  * gkduduu@naver.com
  */
 //각 OTA검색시 들어갈 키워드
-public class HotelKeyword {
+public class HotelKeyword implements Serializable {
     String official;
     String kayak;
     String trivago;

@@ -1,11 +1,9 @@
 package brg.utils.jhy.brggo;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -17,16 +15,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import brg.utils.jhy.brggo.data.Hotel;
-import brg.utils.jhy.brggo.data.HotelBrand;
-import brg.utils.jhy.brggo.utils.Constant;
-import brg.utils.jhy.brggo.utils.JsonParser;
+import brg.utils.jhy.brggo.utils.RealmUtils;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -66,23 +59,24 @@ public class IntroActivity extends AppCompatActivity {
 
     private void getDatabase() {
         mService = mFirebaseRemoteConfig.getBoolean("service");
-        Log.i("jhy","service => " + mService);
         if(mService) {
-            myRef = database.getReference("hotels");
+            myRef = database.getReference("data");
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     JSONObject value = new JSONObject ((HashMap<String,String>)dataSnapshot.getValue());
-                    Hotel hotels = new Hotel();
-                    ArrayList<HotelBrand> brandArray = new ArrayList<>();
-                    Log.d("jhy", "Value is: " + value);
-                    try {
-                        brandArray.add(JsonParser.parsingHilton(value.getJSONArray("hilton")));
-                    }catch(JSONException e) {
-                        e.getStackTrace();
-                    }
-                    hotels.setHotels(brandArray);
-                    Constant.getInstance().setHotels(hotels);
+//                    RealmUtils.initData(IntroActivity.this,value);
+
+//                    Hotel hotels = new Hotel();
+//                    ArrayList<HotelBrand> brandArray = new ArrayList<>();
+//                    Log.d("jhy", "Value is: " + value);
+//                    try {
+//                        brandArray.add(JsonParser.parsingHilton(value.getJSONArray("hilton")));
+//                    }catch(JSONException e) {
+//                        e.getStackTrace();
+//                    }
+//                    hotels.setHotels(brandArray);
+//                    Constant.getInstance().setHotels(hotels);
                     finish();
                     startActivity(new Intent(IntroActivity.this,MainActivity.class));
                     overridePendingTransition(0,0);
